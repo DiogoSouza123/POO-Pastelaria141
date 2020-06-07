@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+    <servlet>
+        <servlet-name>CadastrarClienteServlet</servlet-name>
+        <servlet-class>com.mycompany.pastelario141.servlet.CadastrarClienteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CadastrarClienteServlet</servlet-name>
+        <url-pattern>/CadastrarClienteServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ListarClientes</servlet-name>
+        <servlet-class>com.mycompany.pastelario141.servlet.ListarClientes</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ListarClientes</servlet-name>
+        <url-pattern>/ListarClientes</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>DeletarClienteServlet</servlet-name>
+        <servlet-class>com.mycompany.pastelario141.servlet.DeletarClienteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeletarClienteServlet</servlet-name>
+        <url-pattern>/DeletarClienteServlet</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>

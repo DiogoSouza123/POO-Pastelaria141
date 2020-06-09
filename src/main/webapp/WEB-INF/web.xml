@@ -27,6 +27,30 @@
         <servlet-name>DeletarClienteServlet</servlet-name>
         <url-pattern>/DeletarClienteServlet</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>CadastroFuncionarioServlet</servlet-name>
+        <servlet-class>com.mycompany.pastelario141.servlet.CadastroFuncionarioServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CadastroFuncionarioServlet</servlet-name>
+        <url-pattern>/CadastroFuncionarioServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>DeletarFuncionarioServlet</servlet-name>
+        <servlet-class>com.mycompany.pastelario141.servlet.DeletarFuncionarioServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeletarFuncionarioServlet</servlet-name>
+        <url-pattern>/DeletarFuncionarioServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ListarFuncionarios</servlet-name>
+        <servlet-class>com.mycompany.pastelario141.servlet.ListarFuncionarios</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ListarFuncionarios</servlet-name>
+        <url-pattern>/ListarFuncionarios</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30

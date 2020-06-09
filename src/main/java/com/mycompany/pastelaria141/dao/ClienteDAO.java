@@ -20,9 +20,9 @@ import java.util.logging.Logger;
  *
  * @author DiogoSouza
  */
-public class ClienteDAO {
+public class ClienteDAO{
 
-    public static boolean cadastrarCliente(Cliente cliente) {
+    public static boolean cadastrarCliente(Cliente cliente)  {
         boolean ok = false;
         Connection con;
         try {
@@ -108,4 +108,5 @@ public class ClienteDAO {
         }
         return cliente;
     }
+    
 }

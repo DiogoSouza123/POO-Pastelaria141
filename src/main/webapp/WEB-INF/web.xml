@@ -75,6 +75,25 @@
         <servlet-name>DeletarProdutoServlet</servlet-name>
         <url-pattern>/DeletarProdutoServlet</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ListarClientesVenda</servlet-name>
+        <servlet-class>com.mycompany.pastelario141.servlet.ListarClientesVenda</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ListarClientesVenda</servlet-name>
+        <url-pattern>/ListarClientesVenda</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>VendaIniciarServlet</servlet-name>
+        <servlet-class>com.mycompany.pastelario141.servlet.VendaIniciarServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>VendaIniciarServlet</servlet-name>
+        <url-pattern>/VendaIniciarServlet</url-pattern>
+    </servlet-mapping>
+    
     <session-config>
         <session-timeout>
             30

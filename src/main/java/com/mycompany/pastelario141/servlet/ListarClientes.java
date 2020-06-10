@@ -35,8 +35,8 @@ public class ListarClientes extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
-        List<Cliente> clientes = ClienteDAO.listarClientes();
+        ClienteDAO clienteDAO = new ClienteDAO();
+        List<Cliente> clientes = clienteDAO.listarCliente();
         request.setAttribute("clientes", clientes);
         
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/listarClientes.jsp");

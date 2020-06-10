@@ -32,7 +32,8 @@ public class DeletarClienteServlet extends HttpServlet {
 
         String id = request.getParameter("id");
 
-        boolean ok = ClienteDAO.excluirCliente(Integer.parseInt(id));
+        ClienteDAO clienteDAO = new ClienteDAO();
+        boolean ok = clienteDAO.excluirCliente(Integer.parseInt(id));
         PrintWriter out = response.getWriter();
 
         String url = "";

@@ -32,8 +32,9 @@ public class DeletarFuncionarioServlet extends HttpServlet {
             throws ServletException, IOException {
 
         String id = request.getParameter("id");
-
-        boolean ok = FuncionarioDAO.excluirFuncionario(Integer.parseInt(id));
+        
+        FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
+        boolean ok = funcionarioDAO.excluirFuncionario(Integer.parseInt(id));
         PrintWriter out = response.getWriter();
 
         String url = "";

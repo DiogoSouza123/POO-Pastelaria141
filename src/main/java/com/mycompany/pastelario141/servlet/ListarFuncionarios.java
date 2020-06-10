@@ -24,8 +24,8 @@ public class ListarFuncionarios extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
-        List<Funcionario> funcionarios = FuncionarioDAO.listarFuncionarios();
+        FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
+        List<Funcionario> funcionarios = funcionarioDAO.listarFuncionarios();
         request.setAttribute("funcionarios", funcionarios);
         
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/listarFuncionarios.jsp");

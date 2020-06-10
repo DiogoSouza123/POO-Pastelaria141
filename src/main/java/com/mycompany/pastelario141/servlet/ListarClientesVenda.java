@@ -36,12 +36,13 @@ public class ListarClientesVenda extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 
+        ClienteDAO clienteDAO = new ClienteDAO();
+
         List<Produto> produtos = ProdutoDAO.listarProdutos();
-        List<Cliente> clientes = ClienteDAO.listarClientes();
-        
+        List<Cliente> clientes = clienteDAO.listarCliente();
+
         request.setAttribute("produtos", produtos);
         request.setAttribute("clientes", clientes);
-        
 
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/vendaIniciar.jsp");
         dispatcher.forward(request, response);

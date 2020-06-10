@@ -6,6 +6,7 @@
 package com.mycompany.pastelaria141.dao;
 
 import com.mycompany.pastelaria141.db.Conexao;
+import com.mycompany.pastelaria141.entidade.Cliente;
 import com.mycompany.pastelaria141.entidade.Funcionario;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -20,9 +21,10 @@ import java.util.logging.Logger;
  *
  * @author DiogoSouza
  */
-public class FuncionarioDAO {
+public class FuncionarioDAO implements InterfaceDAO{
 
-    public static boolean cadastrarFuncionario(Funcionario funcionario) {
+    @Override
+    public boolean cadastrar(Funcionario funcionario) {
         boolean ok = false;
         Connection con;
         try {
@@ -42,8 +44,9 @@ public class FuncionarioDAO {
         }
         return ok;
     }
-
-    public static List<Funcionario> listarFuncionarios() {
+    
+    @Override
+    public List<Funcionario> listarFuncionarios() {
         List<Funcionario> funcionarios = new ArrayList<>();
         boolean ok = false;
         Connection con;
@@ -70,7 +73,8 @@ public class FuncionarioDAO {
         return funcionarios;
     }
 
-    public static boolean excluirFuncionario(int id) {
+    @Override
+    public boolean excluirFuncionario(int id) {
         boolean ok = false;
         Connection con;
         try {
@@ -84,5 +88,25 @@ public class FuncionarioDAO {
             Logger.getLogger(FuncionarioDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         return ok;
+    }
+
+    @Override
+    public boolean cadastrar(Cliente cliente) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<Cliente> listarCliente() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Cliente localizarClienteID(String id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean excluirCliente(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

@@ -40,7 +40,8 @@ public class CadastroFuncionarioServlet extends HttpServlet {
         String salario = request.getParameter("salario");
 
         Funcionario funcionario = new Funcionario(nome, cpf, endereco, cargo, salario);
-        boolean ok = FuncionarioDAO.cadastrarFuncionario(funcionario);
+        FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
+        boolean ok = funcionarioDAO.cadastrar(funcionario);
         PrintWriter out = response.getWriter();
 
         String url = "";

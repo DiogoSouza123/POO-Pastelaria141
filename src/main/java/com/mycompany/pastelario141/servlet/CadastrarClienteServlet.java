@@ -37,7 +37,8 @@ public class CadastrarClienteServlet extends HttpServlet {
         String email = request.getParameter("email");
         
         Cliente cliente = new Cliente(nome,cpf,endereco, email);
-        boolean ok = ClienteDAO.cadastrarCliente(cliente);
+        ClienteDAO clienteDAO = new ClienteDAO();
+        boolean ok = clienteDAO.cadastrar(cliente);
         PrintWriter out = response.getWriter();
 
         String url = "";

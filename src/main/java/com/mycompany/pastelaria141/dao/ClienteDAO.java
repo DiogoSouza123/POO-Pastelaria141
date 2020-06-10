@@ -7,6 +7,7 @@ package com.mycompany.pastelaria141.dao;
 
 import com.mycompany.pastelaria141.db.Conexao;
 import com.mycompany.pastelaria141.entidade.Cliente;
+import com.mycompany.pastelaria141.entidade.Funcionario;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -20,9 +21,9 @@ import java.util.logging.Logger;
  *
  * @author DiogoSouza
  */
-public class ClienteDAO{
-
-    public static boolean cadastrarCliente(Cliente cliente)  {
+public class ClienteDAO implements InterfaceDAO{
+    @Override
+    public boolean cadastrar(Cliente cliente)  {
         boolean ok = false;
         Connection con;
         try {
@@ -40,8 +41,9 @@ public class ClienteDAO{
         }
         return ok;
     }
-
-    public static List<Cliente> listarClientes() {
+    
+    @Override
+    public List<Cliente> listarCliente() {
         List<Cliente> clientes = new ArrayList<>();
         boolean ok = false;
         Connection con;
@@ -65,7 +67,8 @@ public class ClienteDAO{
         return clientes;
     }
 
-    public static boolean excluirCliente(int id) {
+    @Override
+    public boolean excluirCliente(int id) {
         boolean ok = false;
         Connection con;
         try {
@@ -81,7 +84,8 @@ public class ClienteDAO{
         return ok;
     }
 
-    public static Cliente localizarClienteID(String id) {
+    @Override
+    public Cliente localizarClienteID(String id) {
         boolean ok = false;
         Connection con;
         Cliente cliente = new Cliente();
@@ -107,6 +111,21 @@ public class ClienteDAO{
             Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         return cliente;
+    }
+
+    @Override
+    public boolean cadastrar(Funcionario funcionario) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<Funcionario> listarFuncionarios() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean excluirFuncionario(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

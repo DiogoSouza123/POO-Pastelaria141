@@ -17,8 +17,11 @@
             <form action="CadastroProdutoServlet" method="POST">
                 Nome:<input type="text" name="nome"/><br>
                 Quantidade: <input type="text" name="quantidade"/><br>
-                Preco: <input type="text" nome="preco"/><br> 
-                Tipo: <input type="text" name="tipo"/><br>
+                Preco: <input type="text" name="preco"/><br> 
+                Tipo: <select id="tipo" name="tipo">
+                        <option value="Doce">Doce</option>
+                        <option value="Salgado" >Salgado</option>
+                    </select><br>
                 Descricao: <input type="text" name="descricao"/><br>
                 <button type="submit" >Enviar</button>
             </form>
